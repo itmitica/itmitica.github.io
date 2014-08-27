@@ -68,8 +68,9 @@ td { vertical-align: top; }
     Author: Jonathan Verrecchia
    =================================================== */
 
-body{ font:18px/32px Georgia, sans-serif; color: #373c3c; }
+/*body{ font:18px/32px Georgia, sans-serif; color: #373c3c; }*/
 /*body{ font:16px/32px 'Varela Round', Helvetica, Helvetica Neue, Arial, sans-serif; }*/
+body{ font:18px/32px "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif; color: #373c3c; }
 
 .wrapper{
 	width:90%;
