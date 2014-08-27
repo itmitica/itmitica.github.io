@@ -147,8 +147,8 @@ a, a:visited { color: #4a97c8; }
 a:hover { color: #ff6834; }
 
 aside h3 { text-align: center; }
-aside a, aside a:visited { color: #cfe9fa; text-decoration: none; }
-aside a:hover { color: #f9fcfc; text-decoration: underline; }
+aside a, aside a:visited { color: #ffffff; text-decoration: none; }
+aside a:hover { text-decoration: underline; }
 aside ul { list-style: none; padding: 0; font-style: italic; }
 aside ul li { padding: .5em 0; }
 
