@@ -149,7 +149,7 @@ a:hover { color: #ff6834; }
 aside h3 { text-align: center; }
 aside a, aside a:visited { color: #ffffff; text-decoration: none; }
 aside a:hover { text-decoration: underline; }
-aside ul { list-style: none; padding: 0; font-style: italic; }
+aside ul { list-style: none; padding: 0; }
 aside ul li { padding: .5em 0; }
 
 article footer { color: #6d7575; margin-bottom: 2em; /*border-top: 1px dashed #6d7575;*/ }
