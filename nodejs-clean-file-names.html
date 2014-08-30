@@ -1,0 +1,156 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>NodeJS for Digital Housekeeping - Clean File Names - I.T. Mitică</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link rel="stylesheet" href="css/style.css">
+
+    <!-- <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'> -->
+    <!-- <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'> -->
+    <!-- <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'> -->
+
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'> -->
+
+	<script src="js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+<body>
+
+	<div id="header-container">
+		<header class="wrapper clearfix">
+			<h1>
+                <a href="index.html">
+                    <img src="img/logo.png" alt="I.T. Mitică">
+                </a>
+            </h1>
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="blog-list-page1.html" class="current">Blog</a></li>
+					<li><a href="about.html">About</a></li>
+				</ul>
+                <select onchange="location = this.options[this.selectedIndex].value;">
+                    <option selected="selected" value="">Go to...</option>
+                    <option value="index.html">Home</option>
+                    <option value="blog-list-page1.html">Blog</option>
+                    <option value="about.html">About</option>
+                </select>
+			</nav>
+		</header>
+	</div>
+	<div id="main-container">
+		<div id="main" class="wrapper clearfix">
+			
+			<article>
+				<header>
+					<h1>Clean file names</h1>
+					<p>NodeJS for fun and easy digital housekeeping tasks.</p>
+				</header>
+
+                <section>
+                    <h2 id="file-renaming-tools">File renaming tools</h2>
+                    <p>Occasionally I get a batch of files I have to clean up names for, because there's a given string repeating for each one of them. There is no shortage of file renaming tools, paid or free, that could help me with that.</p>
+                    <p>However, I am aiming for a <i>start simple</i> philosophy, and some of the tools are going way beyond that. Plus, why not scratch my NodeJS itch a little, right?</p>
+				</section>
+
+                <section>
+                    <h2 id="the-gist-of-it">The gist of it</h2>
+                    <p>It starts very simple, with the <a href="http://nodejs.org/api/fs.html">fs</a> library. There are two things I have to do:</p>
+                    <ol>
+                        <li>Get the file list in the current folder</li>
+                        <li>Process each file in a loop</li>
+                    </ol>
+                    <p>Done</p>
+                    <script src="https://gist.github.com/itmitica/0016e019d9d14790a316.js"></script>
+                    <p>and done</p>
+                    <script src="https://gist.github.com/itmitica/51b7c6ec1802f2a89d6c.js"></script>
+                    <p>File processing callback function is also very short: if the string to erase is found in the file name then rename the file by replacing the string with an empty string.</p>
+                    <script src="https://gist.github.com/itmitica/26148fe872dfb9b1e637.js"></script>
+                    <p>One thing left to do is to retrieve the string being passed by as a parameter to the script.</p>
+                    <script src="https://gist.github.com/itmitica/15fcb39854ad7974026d.js"></script>
+                </section>
+
+				<section>
+					<h2 id="usage">Usage</h2>
+					<p>This is the full script:</p>
+                    <script src="https://gist.github.com/itmitica/5469176810db2e53421c.js"></script>
+                    <p>I have two ways of calling the script. For the second one I've manually created a batch file in the local NodeJS modules folder:</p>
+                    <script src="https://gist.github.com/itmitica/ecbfc67036a11acd4992.js"></script>
+				</section>
+
+                <section>
+                    <h2 id="other-considerations">Other considerations</h2>
+                    <p>I could make this a <a href="https://www.npmjs.org/">Node Packaged Module</a> if it grows a little more.</p>
+                </section>
+
+                <footer>
+                    <h3>Published</h3>
+                    <p>August 30th, 2014</p>
+
+                    <h3>Tags</h3>
+                    <p>nodejs, file, rename</p>
+
+                    <h3>Comments</h3>
+                        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'itmiticaro'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+                </footer>
+			</article>
+			
+            <aside>
+                <h3>In this blog post</h3>
+                <ul>
+                    <li><a href="#file-renaming-tools">File renaming tools</a></li>
+                    <li><a href="#the-gist-of-it">The gist of it</a></li>
+                    <li><a href="#usage">Usage</a></li>
+                    <li><a href="#other-considerations">Other considerations</a></li>
+                </ul>
+            </aside>
+			
+		</div> <!-- #main -->
+	</div> <!-- #main-container -->
+
+	<div id="footer-container">
+		<footer class="wrapper">
+			<p>Copyright &copy; 2014, Dumitru "Mitică" UNGUREANU. All rights reserved.</p>
+		</footer>
+	</div>
+
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'itmiticaro'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+    
+</body>
+</html>
