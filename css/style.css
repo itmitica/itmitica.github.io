@@ -73,8 +73,8 @@ td { vertical-align: top; }
 body{ font:18px/32px "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif; color: #373c3c; }
 
 .wrapper{
-	width:90%;
-	margin:0 5%;
+  width:90%;
+  margin:0 5%;
 }
 
 nav { margin-top: 0; }
@@ -121,18 +121,16 @@ blockquote:before {
     ALL: Blue Theme
    =================== */
 
-#header-container,
-#footer-container,
-#main aside{
-    background:#6EB2DD;
+#header-container h1 img {
+  max-width: 400px;
+  max-height: 210px;
 }
 
-#header-container { 
+#header-container {
     border-top:    20px solid #4a97c8;
-    background-image: url(../img/banner.png); 
-    background-repeat: repeat-x; 
-    background-position: 0 141px; 
-    min-height: 240px; 
+    background-repeat: repeat-x;
+    background-position: 0 141px;
+    min-height: 240px;
 }
 
 #title{ color:white; }
@@ -147,7 +145,7 @@ a, a:visited { color: #4a97c8; }
 a:hover { color: #ff6834; }
 
 aside h3 { text-align: center; }
-aside a, aside a:visited { color: #ffffff; text-decoration: none; }
+aside a, aside a:visited { text-decoration: none; }
 aside a:hover { text-decoration: underline; }
 aside ul { list-style: none; padding: 0; }
 aside ul li { padding: .5em 0; }
@@ -172,22 +170,22 @@ hr {
    ============== */
 
 nav a {
-	display:block;
-	margin-bottom:10px;
-	padding:15px 0;
+  display:block;
+  margin-bottom:10px;
+  padding:15px 0;
 
-	/*background:#3F76A4;*/
-	color:#373c3c;
+  /*background:#3F76A4;*/
+  color:#373c3c;
 
-	text-align:center;
-	text-decoration:none;
-	/*font-weight:bold;*/
+  text-align:center;
+  text-decoration:none;
+  /*font-weight:bold;*/
     font-family: 'PT Sans Narrow', sans-serif;
     font-size: 1.1em;
 }
 
 nav a:visited {
-	color:#373c3c;
+  color:#373c3c;
 }
 
 nav a:hover {
@@ -203,21 +201,21 @@ nav a.current { font-size: 1.2em; text-transform: uppercase; }
    ============== */
 
 #main {
-	padding:30px 0;
+  padding:30px 0;
 }
 
 #main article h1 {
-	font-size:2em;
+  font-size:2em;
 }
 
 #main aside{
-	/*color:white;*/
-	padding:0px 5% 10px;
+  /*color:white;*/
+  padding:0px 5% 10px;
 }
 
 #footer-container footer{
-	/*color:white;*/
-	padding:20px 0;
+  /*color:white;*/
+  padding:20px 0;
 }
 
 /* ===============
@@ -246,17 +244,17 @@ nav a.current { font-size: 1.2em; text-transform: uppercase; }
 /* ====================
     INTERMEDIATE: Menu
    ==================== */
-	
-	nav a{
-		float:left;
-		width:27%;
-		margin:0 1.7%;
-		padding:25px 2%;
-		margin-bottom:0;
-	}
-	
-	nav li:first-child a{ margin-left:0;  }
-	nav li:last-child  a{ margin-right:0; }
+
+  nav a{
+    float:left;
+    width:27%;
+    margin:0 1.7%;
+    padding:25px 2%;
+    margin-bottom:0;
+  }
+
+  nav li:first-child a{ margin-left:0;  }
+  nav li:last-child  a{ margin-right:0; }
 
     nav select {
         display: none;
@@ -264,17 +262,17 @@ nav a.current { font-size: 1.2em; text-transform: uppercase; }
 
     nav ul { display: block; }
 
-	
+
 /* ========================
     INTERMEDIATE: IE Fixes
    ======================== */
 
-	nav ul li{
-		display:inline;
-	}	
-	.oldie nav a{
-		margin:0 0.7%;		
-	}
+  nav ul li{
+    display:inline;
+  }
+  .oldie nav a{
+    margin:0 0.7%;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -283,12 +281,12 @@ nav a.current { font-size: 1.2em; text-transform: uppercase; }
     WIDE: CSS3 Effects
    ==================== */
 
-/*	#header-container,
-	#main aside{
-		-webkit-box-shadow:0 5px 10px #aaa;
-		   -moz-box-shadow:0 5px 10px #aaa;
-		        box-shadow:0 5px 10px #aaa;
-	}*/
+/*  #header-container,
+  #main aside{
+    -webkit-box-shadow:0 5px 10px #aaa;
+       -moz-box-shadow:0 5px 10px #aaa;
+            box-shadow:0 5px 10px #aaa;
+  }*/
 
 /* ============
     WIDE: Logo
@@ -299,30 +297,30 @@ nav a.current { font-size: 1.2em; text-transform: uppercase; }
 /* ============
     WIDE: Menu
    ============ */
-	
-	#title{
-		float:left;
-	}
 
-	nav{
-		float:right;
-		width:38%;
+  #title{
+    float:left;
+  }
+
+  nav{
+    float:right;
+    width:38%;
         margin-top: 140px;
-	}
+  }
 
 /* ============
     WIDE: Main
    ============ */
 
-	#main article{
-		float:left;
-		width:57%;
-	}
-		
-	#main aside{
-		float:right;
-		width:28%;
-	}
+  #main article{
+    float:left;
+    width:57%;
+  }
+
+  #main aside{
+    float:right;
+    width:28%;
+  }
 }
 
 @media only screen and (min-width: 1140px) {
@@ -331,20 +329,20 @@ nav a.current { font-size: 1.2em; text-transform: uppercase; }
     Maximal Width
    =============== */
 
-	.wrapper{
-		width:1026px; /* 1140px - 10% for margins */
-		margin:0 auto;
-	}
+  .wrapper{
+    width:1026px; /* 1140px - 10% for margins */
+    margin:0 auto;
+  }
 }
 
 /* ==|== print styles ======================================================= */
- 
+
 @media print {
-  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } 
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; }
   a, a:visited { text-decoration: underline; }
   a[href]:after { content: " (" attr(href) ")"; }
   abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; } 
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
   pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
   thead { display: table-header-group; }
   tr, img { page-break-inside: avoid; }
