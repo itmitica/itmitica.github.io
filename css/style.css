@@ -165,6 +165,8 @@ hr {
   margin-top: 1em;
 }
 
+img.fgr { max-width: 480px; }
+
 /* ==============
     MOBILE: Menu
    ============== */
