@@ -1,0 +1,151 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>JS Slo-Mo - for loop, closures, async callbacks - I.T. Mitică</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'> -->
+    <!-- <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'> -->
+    <!-- <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'> -->
+
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'> -->
+
+    <script src="js/libs/modernizr-2.0.6.min.js"></script>
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <div id="header-container">
+        <header class="wrapper clearfix">
+            <h1>
+                <a href="index.html">
+                    <img src="img/logo.png" alt="I.T. Mitică">
+                </a>
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog-list-page1.html" class="current">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+                <select onchange="location = this.options[this.selectedIndex].value;">
+                    <option selected="selected" value="">Go to...</option>
+                    <option value="index.html">Home</option>
+                    <option value="blog-list-page1.html">Blog</option>
+                    <option value="about.html">About</option>
+                </select>
+            </nav>
+        </header>
+    </div>
+    <div id="main-container">
+        <div id="main" class="wrapper clearfix">
+
+            <article>
+                <header>
+                    <h1>JS Slo-Mo</h1>
+                    <p>for-loop, closures, async callbacks</p>
+                    <p><a href="https://goo.gl/vo6jfH"><small>Google Docs "JS Slo-Mo" Presentation</small></a></p>
+                </header>
+
+                <section>
+                    <h2 id="scopes-and-closures">Scopes &amp; Closures</h2>
+                    <p>JavaScript has global scope and local scope. A closure is a preserved execution context for a local scope. No closures can be formed for the execution context of the global scope.</p>
+                    <p>Let's take a look at the script below.</p>
+                    <script src="https://gist.github.com/itmitica/4e2510f5713697e4d9e28186ba543093.js"></script>
+                    <p><code>i</code> variable is not a closure candidate. <code>i</code> variable is in the global scope: the declaration part is hoisted to the top of the global scope, while the assignment part stays in place.</p>
+                    <p><code>j</code> variable is a closure candidate. <code>j</code> variable is a local variable for the <code>inLoop</code> function. In fact, <code>printc</code> callback function is forming two closures on the <code>j</code> variable.</p>                   
+                    <h3>Vars &amp; Boomerangs, Vars &amp; Sticks, Vars &amp; Embassies</h3>
+                    <p>All functions, <code>inLoop</code>, <code>setTimeout</code>, <code>printc</code>, <code>outLoop</code>, could boomerang for the <code>i</code> value all the way through to the global scope and back.</p>
+                    <p>But for a function like <code>outLoop,</code> a boomerang for <code>j</code> value would not work. As far as the <code>inLoop</code> function is concerned, <code>outLoop</code> function can only throw sticks at its local scope: none will loop back.</p>
+                    <p>What <code>outLoop</code> needs is an embassy grounds inside the local scope of the <code>inLoop</code> function, the same way <code>setTimeout</code> function is the embassy grounds for the <code>printc</code> function inside the local scope of the <code>inLoop</code> function.</p>
+                </section>
+
+                <section>
+                    <h2 id="loops-and-functions">Loops &amp; Functions</h2>
+                    <p>Let's take a look at the script below.</p>
+                    <script src="https://gist.github.com/itmitica/4f42ee84ff76828be7d2b7f515af5e8e.js"></script>
+                    <p>Except for the missing <code>outLoop</code> function, the code is almost identical, the <code>inLoop</code> function as an IIFE is not changing many things here.</p>
+                    <p>Normally, having functions expressions inside loops is not recomended. Because closures are not understood properly, the coder may <b>wish</b> the code would work a cetain way, only to find out that <b>it doesn't</b>. Case in point, <code>i</code> is only producing the value of <code>3</code> for the <code>printc</code> callback function.</p>
+                    <p>Understanding closures is a case of picturing how the scopes <b>and</b> the execution contexts are chained. Based on the snipet above, the presentation is taking a slo-mo approach for the execution stages.</p>
+                </section>
+
+                <section>
+                    <h2 id="links-and-screenshots">Links and screenshots</h2>
+                    <p><a href="https://goo.gl/vo6jfH"><small>Google Docs "JS Slo-Mo" Presentation</small></a></p>
+                    <img class="fgr" src="img/js-slo-mo-loop-closure-async.png">
+                </section>
+
+                <footer>
+                    <h3>Published</h3>
+                    <p>March 31st, 2016</p>
+
+                    <h3>Tags</h3>
+                    <p>JavaScript, loops, closures, async, callbacks</p>
+
+                    <h3>Comments</h3>
+                        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'itmiticaro'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+                </footer>
+            </article>
+
+            <aside>
+                <h3>In this blog post</h3>
+                <ul>
+                    <li><a href="#scopes-and-closures">Scopes &amp; Closures</a></li>
+                    <li><a href="#loops-and-functions">Loops &amp; Functions</a></li>
+                    <li><a href="#links-and-screenshots">Links and screenshots</a></li>
+                </ul>
+            </aside>
+
+        </div> <!-- #main -->
+    </div> <!-- #main-container -->
+
+    <div id="footer-container">
+        <footer class="wrapper">
+            <p>Copyright &copy; 2016, Dumitru "Mitică" UNGUREANU. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'itmiticaro'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+
+</body>
+</html>
