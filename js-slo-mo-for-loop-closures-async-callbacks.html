@@ -72,16 +72,16 @@
                     <h3>Vars &amp; Boomerangs, Vars &amp; Sticks, Vars &amp; Embassies</h3>
                     <p>All functions, <code>inLoop</code>, <code>setTimeout</code>, <code>printc</code>, <code>outLoop</code>, could boomerang for the <code>i</code> value all the way through to the global scope and back.</p>
                     <p>But for a function like <code>outLoop,</code> a boomerang for <code>j</code> value would not work. As far as the <code>inLoop</code> function is concerned, <code>outLoop</code> function can only throw sticks at its local scope: none will loop back.</p>
-                    <p>What <code>outLoop</code> needs is an embassy grounds inside the local scope of the <code>inLoop</code> function, the same way <code>setTimeout</code> function is the embassy grounds for the <code>printc</code> function inside the local scope of the <code>inLoop</code> function.</p>
+                    <p>What <code>outLoop</code> needs is embassy grounds inside the local scope of the <code>inLoop</code> function, the same way <code>setTimeout</code> function is embassy grounds for the <code>printc</code> function inside the local scope of the <code>inLoop</code> function.</p>
                 </section>
 
                 <section>
                     <h2 id="loops-and-functions">Loops &amp; Functions</h2>
-                    <p>Let's take a look at the script below.</p>
+                    <p>Let's take a look at the following script.</p>
                     <script src="https://gist.github.com/itmitica/4f42ee84ff76828be7d2b7f515af5e8e.js"></script>
-                    <p>Except for the missing <code>outLoop</code> function, the code is almost identical, the <code>inLoop</code> function as an IIFE is not changing many things here.</p>
-                    <p>Normally, having functions expressions inside loops is not recomended. Because closures are not understood properly, the coder may <b>wish</b> the code would work a cetain way, only to find out that <b>it doesn't</b>. Case in point, <code>i</code> is only producing the value of <code>3</code> for the <code>printc</code> callback function.</p>
-                    <p>Understanding closures is a case of picturing how the scopes <b>and</b> the execution contexts are chained. Based on the snipet above, the presentation is taking a slo-mo approach for the execution stages.</p>
+                    <p>Except for the missing <code>outLoop</code> function, the code is almost identical with the previous snippet. The <code>inLoop</code> function as an IIFE is not changing many things here.</p>
+                    <p>Normally, having function expressions inside loops is not recomended. Because closures are not understood properly, the coder may <b>wish</b> the code would work a cetain way, only to find out that <b>it doesn't</b>. Case in point, <code>i</code> is only producing the value of <code>3</code> for the <code>printc</code> callback function.</p>
+                    <p>Understanding closures is a case of picturing how the scope <b>and</b> the execution contexts are chained. Based on the snippet above, the presentation is taking a slo-mo approach for the execution stages.</p>
                 </section>
 
                 <section>
